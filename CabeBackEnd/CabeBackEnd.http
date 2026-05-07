@@ -1,0 +1,6 @@
+@CabeBackEnd_HostAddress = http://localhost:5149
+
+GET {{CabeBackEnd_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,42 @@
+# =========================
+# .NET / C#
+# =========================
+[Bb]in/
+[Oo]bj/
+.vs/
+*.user
+*.suo
+appsettings.Development.json
+
+# Se usi SQLite o file di database locali per test
+*.db
+*.sqlite
+
+# =========================
+# Node.js / React (Vite)
+# =========================
+node_modules/
+dist/
+dist-ssr/
+build/
+.npm
+.eslintcache
+
+# File di ambiente con chiavi segrete
+.env
+.env.local
+.env.*.local
+
+# =========================
+# File di Sistema / IDE
+# =========================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# =========================
+# Uploads del tuo progetto
+# =========================
+# Scommenta la riga sotto se NON vuoi versionare le immagini caricate dagli utenti sul tuo backend locale
+# CabeBackEnd/wwwroot/Content/Uploads/

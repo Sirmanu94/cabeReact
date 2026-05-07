@@ -1,0 +1,7 @@
+wwwroot\Content\Uploads\ImgCopertine\0fd5acf2-e4f5-4960-b54a-ac2321e112c9.png
+wwwroot\Content\Uploads\ImgCopertine\9d80de9d-ec94-44ae-ab91-4d782c4e1766.jpg
+wwwroot\Content\Uploads\ImgCopertine\1f689633-a64d-45d2-b34e-956a48522d20.jpeg
+wwwroot\Content\Uploads\FotoProgetto\4ed48293-a01c-489b-b977-a8f670e01de2.jpg
+wwwroot\Content\Uploads\FotoProgetto\57c9726b-9b1c-4b03-9c62-a7ba6539b34c.jpg
+wwwroot\Content\Uploads\FotoProgetto\b4bbfd60-6009-4cde-ba12-45e3bef14179.png
+wwwroot\Content\Uploads\FotoProgetto\b6000f1d-306c-4809-94c3-0b980014cd46.jpg
