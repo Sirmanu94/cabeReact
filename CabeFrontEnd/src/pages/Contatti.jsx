@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-const API_BASE_URL = 'https://localhost:7220';
+const API_BASE_URL = 'https://admin.cabeingegneria.it';
 
 export default function Contatti() {
   const [formData, setFormData] = useState({

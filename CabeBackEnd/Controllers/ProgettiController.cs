@@ -27,7 +27,7 @@ namespace CabeBackEnd.Controllers
             return Ok(progetti);
         }
 
-        [HttpPost("salva")]
+        [HttpPost]
         [Authorize]
         public async Task<IActionResult> SalvaProgetto([FromForm] ProgettoUploadDto dto)
         {

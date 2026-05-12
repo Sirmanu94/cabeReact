@@ -46,12 +46,11 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowReactApp",
         policy =>
         {
-            policy.WithOrigins("http://localhost:5173", "http://localhost:3000") // Aggiungi le porte di Vite/React
+            policy.AllowAnyOrigin()
                   .AllowAnyHeader()
                   .AllowAnyMethod();
         });
 });
-
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -69,11 +68,51 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-app.UseCors("AllowReactApp");
 app.UseStaticFiles();
+
+// --- INIZIO SOLUZIONE BULLDOZER PER IL PREFLIGHT (CORS) ---
+app.Use(async (context, next) =>
+{
+    if (context.Request.Method == "OPTIONS")
+    {
+        // 1. Leggiamo da dove arriva la richiesta
+        var origin = context.Request.Headers["Origin"].ToString();
+
+        // 2. Controlliamo se è uno dei TUOI domini autorizzati
+        var allowedOrigins = new[] {
+            "https://www.cabeingegneria.it",
+            "https://cabeingegneria.it",
+            "http://localhost:5173"
+        };
+
+        if (allowedOrigins.Contains(origin))
+        {
+            // 3. Rispondiamo col nome esatto del dominio, invece che con l'asterisco (*)
+            context.Response.Headers.Add("Access-Control-Allow-Origin", origin);
+            context.Response.Headers.Add("Access-Control-Allow-Headers", "Content-Type, Authorization");
+            context.Response.Headers.Add("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+            context.Response.StatusCode = 200;
+            return;
+        }
+        else
+        {
+            // Se un altro sito ci prova, gli diamo un errore 403 Forbidden
+            context.Response.StatusCode = 403;
+            return;
+        }
+    }
+    await next();
+});
+// --- FINE SOLUZIONE BULLDOZER ---
+
+app.UseRouting();
+
+// Mantieni la tua policy CORS per le richieste normali (GET, POST)
+app.UseCors("AllowReactApp");
+
 app.UseAuthentication();
 app.UseAuthorization();
+
 app.MapControllers();
 
 app.Run();

@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 // Imposta qui l'URL del tuo backend!
-const API_BASE_URL = 'https://localhost:7220';
+const API_BASE_URL = 'https://admin.cabeingegneria.it';
 
 export default function Progetti() {
   const [progetti, setProgetti] = useState([]);

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 
-const API_BASE_URL = 'https://localhost:7220';
+const API_BASE_URL = 'https://admin.cabeingegneria.it';
 
 export default function Contact() {
   const canvasRef = useRef(null);

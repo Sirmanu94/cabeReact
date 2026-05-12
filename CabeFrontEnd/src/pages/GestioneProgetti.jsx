@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 
-const API_BASE_URL = 'https://localhost:7220';
+const API_BASE_URL = 'https://admin.cabeingegneria.it';
 
 export default function GestioneProgetti() {
   const [progetti, setProgetti] = useState([]);
@@ -41,7 +41,6 @@ export default function GestioneProgetti() {
     const token = localStorage.getItem('token');
     
     const dataToSend = new FormData();
-    // Usa le chiavi esatte del DTO in .NET per il body della POST
     dataToSend.append('id_Progetto', formData.idProgetto);
     dataToSend.append('descrizione_Breve', formData.descrizioneBreve);
     dataToSend.append('descrizione', formData.descrizione);
@@ -52,7 +51,8 @@ export default function GestioneProgetti() {
     }
 
     try {
-      const res = await fetch(`${API_BASE_URL}/api/progetti/salva`, {
+      // MODIFICA QUI: Rimuovi /salva dall'URL
+      const res = await fetch(`${API_BASE_URL}/api/progetti`, {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${token}` },
         body: dataToSend
