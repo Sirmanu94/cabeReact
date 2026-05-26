@@ -64,7 +64,7 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="relative w-full bg-[#030508] text-gray-400 overflow-hidden border-t border-white/5">
+    <footer className="relative w-full bg-[#030508] text-white overflow-hidden border-t border-white/5">
       
       {/* 1. Particelle di sfondo */}
       <canvas ref={canvasRef} className="absolute inset-0 z-0 opacity-60"></canvas>
@@ -152,11 +152,11 @@ export default function Footer() {
 
       {/* 3. Footer Bottom */}
       <div className="relative z-10 border-t border-white/5 bg-black/30">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-light text-gray-600">
-          <p>&copy; 2025 Cabe - P.IVA 10507651213 - Tutti i diritti riservati</p>
-          <div className="flex gap-1.5 items-center opacity-70 hover:opacity-100 transition-opacity">
-            <span>Developed By</span>
-            <a href="https://081lab.com" target="_blank" rel="noopener noreferrer" className="font-medium text-gray-500 hover:text-[#00b4d8]">081Lab</a>
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-light text-white">
+          <p>&copy; 2026 Cabe - P.IVA 10507651213 - Tutti i diritti riservati</p>
+          <div className="flex gap-1.5 items-center  hover:opacity-100 transition-opacity">
+            <span className='text-lg'>Developed by</span>
+            <a href="https://081lab.com" target="_blank" rel="noopener noreferrer" className="text-lg font-semibold text-white hover:text-orange-400">081Lab</a>
           </div>
         </div>
       </div>
