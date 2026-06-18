@@ -17,6 +17,7 @@ builder.Services.AddDbContext<CabeContext>(options =>
 builder.Services.AddScoped<IUtentiRepository, UtentiRepository>();
 builder.Services.AddScoped<IProgettiRepository, ProgettiRepository>();
 builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddScoped<IDipendentiRepository, DipendentiRepositoryImpl>();
 
 
 var jwtSettings = builder.Configuration.GetSection("Jwt");

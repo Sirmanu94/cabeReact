@@ -15,6 +15,8 @@ public partial class CabeContext : DbContext
     {
     }
 
+    public virtual DbSet<Dipendenti> Dipendentis { get; set; }
+
     public virtual DbSet<FotoProgetto> FotoProgettos { get; set; }
 
     public virtual DbSet<Progetti> Progettis { get; set; }
@@ -26,6 +28,26 @@ public partial class CabeContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<Dipendenti>(entity =>
+        {
+            entity.HasKey(e => e.IdDipendente);
+
+            entity.ToTable("Dipendenti");
+
+            entity.Property(e => e.IdDipendente).HasColumnName("id_dipendente");
+            entity.Property(e => e.Nome)
+                .HasMaxLength(255)
+                .IsUnicode(false)
+                .HasColumnName("nome");
+            entity.Property(e => e.PathFoto)
+                .IsUnicode(false)
+                .HasColumnName("path_foto");
+            entity.Property(e => e.Ruolo)
+                .HasMaxLength(255)
+                .IsUnicode(false)
+                .HasColumnName("ruolo");
+        });
+
         modelBuilder.Entity<FotoProgetto>(entity =>
         {
             entity.HasKey(e => e.IdPathFotoProgetto);

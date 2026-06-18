@@ -13,6 +13,7 @@ import Progetti from './pages/Progetti';
 import Login from './pages/Login';
 import GestioneProgetti from './pages/GestioneProgetti';
 import NotFound from './pages/NotFound';
+import GestioneDipendenti from './pages/GestioneDipendenti';
 
 // 1. QUESTO È IL TRUCCHETTO SALVA-VITA PER IL ROUTING
 // Quando cambi pagina, forza il browser a tornare in cima, 
@@ -44,6 +45,8 @@ function App() {
             <Route path="/admin/login" element={<Login />} />
             <Route path="/progetto/:id" element={<ProgettoDettaglio />} />
             <Route path="/admin/progetti" element={<GestioneProgetti />} />   
+            <Route path="/admin/dipendenti" element={<GestioneDipendenti />} />   
+
             <Route path="/contatti" element={<Contatti />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
